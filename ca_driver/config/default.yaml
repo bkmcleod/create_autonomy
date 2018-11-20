@@ -18,3 +18,5 @@ loop_hz: 10.0
 
 # Whether to publish the transform between odom_frame and base_frame
 publish_tf: true
+
+robot_model: CREATE_2

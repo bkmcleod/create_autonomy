@@ -72,31 +72,25 @@ $ sudo apt-get install python-rosdep python-catkin-tools
 
 #### Compiling
 
-1. Create a catkin workspace  
-    ``` bash
-    $ cd ~
-    $ mkdir -p create_ws/src  
-    $ cd create_ws  
-    $ catkin init  
-    ```
+1. Create a catkin workspace - REMOVED IN bkmcleod fork  
 
 2. Clone this repo  
     ``` bash
-    $ cd ~/create_ws/src
-    $ git clone https://github.com/AutonomyLab/create_autonomy.git  
+    $ cd ~/catkin_ws/src
+    $ git clone https://github.com/bkmcleod/create_autonomy  
     ```
   
 3. Install dependencies  
     ``` bash
-    $ cd ~/create_ws
+    $ cd ~/catkin_ws
     $ rosdep update  
     $ rosdep install --from-paths src -i  
     ```
 
 4. Build  
     ``` bash
-    $ cd ~/create_ws
-    $ catkin build
+    $ cd ~/catkin_ws
+    $ catkin_make
     ```
 #### USB Permissions
 5. In order to connect to Create over USB, ensure your user is in the dialout group
@@ -110,9 +104,9 @@ $ sudo apt-get install python-rosdep python-catkin-tools
 
 ### Setup
 
-1. After compiling from source, don't forget to source your workspace:  
+1. After compiling from source, don't forget to source your workspace: Not needed in bkmcleod Fork 
     ``` bash
-    $ source ~/create_ws/devel/setup.bash
+    $ source ~/catkin_ws/devel/setup.bash
     ```
 
 2. Connect computer to Create's 7-pin serial port
@@ -122,20 +116,13 @@ $ sudo apt-get install python-rosdep python-catkin-tools
 
 ### Launch files
 
+bkmcleod Fork is already set for Create_2
+
 For Create 2 (Roomba 600/700 series):
 ``` bash
 $ roslaunch ca_driver create_2.launch
 ```
 
-For Create 1 (Roomba 500 series):
-``` bash
-$ roslaunch ca_driver create_1.launch
-```
-
-For Roomba 400 series:
-``` bash
-$ roslaunch ca_driver roomba_400.launch
-```
 
 #### Launch file arguments
 
@@ -251,11 +238,11 @@ Contributing to the development and maintenance of _create\_autonomy_ is encoura
 [bool]:  http://docs.ros.org/api/std_msgs/html/msg/Bool.html
 [uint8multiarray]:  http://docs.ros.org/api/std_msgs/html/msg/UInt8MultiArray.html
 [float32]:  http://docs.ros.org/api/std_msgs/html/msg/Float32.html
-[ca_msgs]:  http://github.com/AutonomyLab/create_autonomy/tree/indigo-devel
-[bumper_msg]:  https://github.com/AutonomyLab/create_autonomy/blob/indigo-devel/ca_msgs/msg/Bumper.msg
-[mode_msg]:  https://github.com/AutonomyLab/create_autonomy/blob/indigo-devel/ca_msgs/msg/Mode.msg
-[chargingstate_msg]:  https://github.com/AutonomyLab/create_autonomy/blob/indigo-devel/ca_msgs/msg/ChargingState.msg
+[ca_msgs]:  http://github.com/bkmcleod/create_autonomy/tree/indigo-devel
+[bumper_msg]:  https://github.com/bkmcleod/create_autonomy/blob/indigo-devel/ca_msgs/msg/Bumper.msg
+[mode_msg]:  https://github.com/bkmcleod/create_autonomy/blob/indigo-devel/ca_msgs/msg/Mode.msg
+[chargingstate_msg]:  https://github.com/bkmcleod/create_autonomy/blob/indigo-devel/ca_msgs/msg/ChargingState.msg
 [jointstate_msg]:  http://docs.ros.org/api/sensor_msgs/html/msg/JointState.html
-[definesong_msg]:  https://github.com/AutonomyLab/create_autonomy/blob/indigo-devel/ca_msgs/msg/DefineSong.msg
-[playsong_msg]:  https://github.com/AutonomyLab/create_autonomy/blob/indigo-devel/ca_msgs/msg/PlaySong.msg
+[definesong_msg]:  https://github.com/bkmcleod/create_autonomy/blob/indigo-devel/ca_msgs/msg/DefineSong.msg
+[playsong_msg]:  https://github.com/bkmcleod/create_autonomy/blob/indigo-devel/ca_msgs/msg/PlaySong.msg
 
